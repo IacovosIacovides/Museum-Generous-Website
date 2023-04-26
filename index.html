@@ -1,74 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V and A museum Generous Interface</title>
+  <title>V&A Museum Objects Timeline</title>
   <link rel="stylesheet" href="style.css">
+    
 </head>
-<body>
-  <div id="results"></div>
+  <body>
+    <img src="./backgroundimage.jpg" class="bg-image">
+    <div class="main">
+      <div class="container">
+        <h1 class="animate__animated animate__flash">V&A Museum Objects Timeline</h1>
 
-  <div class="container">
-    <div class="top-section">
-      <h1>Collections</h1>
-      <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna 
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-      </p>
+        <div class="timeline_2" id="timeline_2">
+          <ul id="timeline2List">
+          </ul>
+        </div>
+
+        <div class="timeline" id="timeline"></div>
+      </div>
+      <script src="app.js"></script>
     </div>
-    <div class="timeline">
-      <div class="line"></div>
-      <div class="section">
-        <div class="bead"></div>
-        <div class="content">
-          <span class="timeline-year" onclick="getInfoForYear(1790)">2000</span>
-          <p>
-            Get to know what took place in the year 1780
-          </p>
-        </div>
-      </div>
-      <div class="section">
-        <div class="bead"></div>
-        <div class="content">
-          <h2>1780</h2>
-          <p>
-            Get to know what took place in the year 1780
-          </p>
-        </div>
-      </div>
-      <div class="section">
-        <div class="bead"></div>
-        <div class="content">
-          <h2>1780</h2>
-          <p>
-            Get to know what took place in the year 1780
-          </p>
-        </div>
-      </div>
-      <div class="section">
-        <div class="bead"></div>
-        <div class="content">
-          <h2>1780</h2>
-          <p>
-            Get to know what took place in the year 1780
-          </p>
-        </div>
-      </div>  
-      <div class="section">
-        <div class="bead"></div>
-        <div class="content">
-          <h2>1780</h2>
-          <p>
-            Get to know what took place in the year 1780
-          </p>
-        </div>
-      </div>  
-  </div>
-  <script src="timeline.js"></script>
-</div>
-<div class="down-arrow"></div>
-</body>
+  </body>
 </html>

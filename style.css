@@ -1,122 +1,224 @@
-body{
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 2;
-  font-weight: 400;
-  color: white;
-  background-color: black;
+
+:root{
+    --h1font:'Raleway', sans-serif;
 }
-.container{
-  padding: 2rem;
-  padding-bottom: 400px;
-  margin: 0 auto;
-  max-width: 800px;
+
+body {
+    background-image: url(backgroundimage.jpg);
+    background-color: rgba(0, 0, 0, 0.557);
+    font-family: 'Raleway', sans-serif;
+    max-width: 1980px;
+    overflow-x: hidden;
+    position: relative;
+    font-size: 16px;
 }
-.top-section{
-  text-align: center;
-  padding: 4rem 0;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.timeline{
-  position: relative;
-  min-height: 150px;
-}
-.line{
-  position: absolute;
-  z-index: 2;
-  left: calc(50% - 1px);
-  width: 2px;
-  top: -50px;
-  bottom: -50px;
-  background-color: #ffffff;
-  display: none;
-}
-.line::before,
-.line::after{
-  position: absolute;
-  display: block;
-  content: '';
-  height: 1rem;
-  width: 1rem;
-  border-radius: 50%;
-  background-color: white;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.line::after{
-  bottom: 0;
-}
-.section{
-  display: flex;
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: 600ms ease;
-  position: relative;
-  z-index: 1;
-  margin: 50px 0;
-  padding: 1rem;
-  border-radius: 1rem;
-  align-items: center;
-  min-height: 300px;
-}
-.section:nth-child(odd){
-  flex-direction: row-reverse;
-  transform: translateX(100%);
-}
-.bead{
-  position: absolute;
-  display: block;
-  height: 1rem;
-  width: 1rem;
-  border-radius: 50%;
-  background-color: white;
-  left: 50%;
-  top: 20%;
-  transform: translateX(-50%);
-}
-.content{
-  width: calc(50% - 2rem);
-}
-.show-me:nth-child(n){
-  transform: none;
-  opacity: 1;
-}
+
 h1{
-  font-weight: 400;
-  letter-spacing: 1px;
+    font-family: var(--h1font);
+    font-size: 3.125em;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
 }
-.down-arrow {
+
+
+.bg-image{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main{
+    position: relative;
+    z-index: 2;
+}
+
+.timeline {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+.container{
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+.timeline-item {
+    background-color: #f0f0f080;
+    border-radius: 30px;
+    margin-bottom: 2%;
+    min-height: 21.875em;
+    overflow-y: auto;
+    float: left;
+    width: 32%;
+}
+
+.timeline-item *{
+    padding: 15px;
+}
+
+.timeline-item:not(:nth-child(3n)) {
+    margin-right: 2%;
+}
+
+.timeline-item:hover{
+    background-color: #f0f0f0;
+}
+
+.timeline-item img{
+    width: 100px;
+}
+
+.animate__animated.animate__flash {
+--animate-duration: 6s;
+}
+
+.timeline_2 ul{
+    list-style: none;
+    padding: 4em 0;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.949);
+    padding: 2em 1em;
+    list-style: none;
+}
+
+.timeline_2 ul li{
+    font-size: 1.5em;
+    font-weight: 700;
+    position: relative;
+    width: 5%;
+}
+
+.timeline_2 ul li:not(:last-child){
+    margin-bottom: .5em;
+}
+
+.timeline_2 ul span{
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translate(100%, -50%);
+    -ms-transform: translate(100%, -50%);
+    -webkit-transform: translate(100%, -50%);
+    content: "";
+    border: 2px solid white;
+    min-height: 4px;
+    width: 1%;
+    display: inline-flex;
+    background-color: white;
+    border-radius: 40px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* The modal container */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+
+/* Display the modal */
+.modal.block{
+    display: block;
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 30px;
+}
+
+/* Close button */
+.modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Close Button */
+.close-btn {
   position: absolute;
-  top: calc(100vh - 80px);
-  right: 100px;
-  width: 0;
-  height: 30px;
-  border: 2px solid;
-  border-radius: 2px;
-  animation: jumpInfinite 1.5s infinite;
+  top: 40px;
+  right: 40px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+  padding: 0px 12px;
+  cursor: pointer;
+  transform: translate(100%, -50%);
+  -ms-transform: translate(100%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  border-radius: 30px;
 }
-.down-arrow:after {
-  content: " ";
-  position: absolute;
-  top: 12px;
-  left: -10px;
-  width: 16px;
-  height: 16px;
-  border-bottom: 4px solid;
-  border-right: 4px solid;
-  border-radius: 4px;
-  transform: rotateZ(45deg);
+
+.close-btn:hover{
+    color: black;
+    background-color: rgb(228, 173, 114);
+    transition: 0.3s ease-out;
 }
-@keyframes jumpInfinite {
-  0% {
-    margin-top: 0;
-  }
-  50% {
-    margin-top: 20px;
-  }
-  100% {
-    margin-top: 0;
-  }
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+  
+
+@media (max-width: 1024px) {
+	body{
+		font-size:15px;
+	}
+}
+
+@media (max-width: 960px) {
+	body{
+		font-size:14px;
+	}
+}
+@media (max-width:768px){
+	body{
+		font-size:13px;
+	}
+    .timeline-item {
+        width: 100%;
+    }
+    .timeline-item:not(:nth-child(3n)) {
+        margin-right: 0%;
+    }
+}
+@media (max-width: 480px) {
+	body{
+		font-size:12px;
+	}
 }
